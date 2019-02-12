@@ -1,0 +1,39 @@
+<!--pages/coupons/coupons.wxml-->
+<view class="coupons container">
+    <view class="merchants-wrap">
+        <view
+          class="merchants-item row space-between"
+          wx:for="{{merchantsArr}}"
+          wx:item="item"
+          wx:key="index"
+          wx:index="index"
+        >
+          <view class="left row">
+            <image
+              style="width: 140rpx;height:140rpx;margin-right: 20rpx;"
+              src="{{url+item.img_url}}"></image>
+            <view class="column center">
+              <text class="title">{{item.name}}</text>
+              <text class="describe">{{item.brief}}</text>
+            </view>
+          </view>
+          <view class="right column center">
+            <text class="distance">{{item.distance}}m</text>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class="bounced-wrap" wx:if="{{modalShow}}">
+     <view class="bounced">
+            <view class="header">
+              <icon bindtap="closeModal" class="cross-icon" name="cross"/>
+              <image src="/assets/img/coupons/coupons.png"></image>
+            </view>
+            <view class="footer column flex-center">
+             <button
+               bindtap="receive"
+               class="btn row center flex-center">点击领取</button>
+              <text class="tip">全场商品通用，最终解释权归官方</text>
+            </view>
+       </view>
+  </view>

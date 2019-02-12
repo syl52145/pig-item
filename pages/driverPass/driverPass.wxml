@@ -1,0 +1,43 @@
+<!--pages/driverPass/driverPass.wxml-->
+<view class="my container">
+    <view class="user-info-wrap"> </view>      
+    <view class="adFlex padding-side16"> 
+        <view class="account-info column space-between">
+            <view class="adMaster-title">
+                <icon class="my-icon"></icon>
+                <text>司机信息</text> 
+            </view> 
+            <view class="adMaster-detail">
+                <view class="adMaster-info">
+                    <text>{{list.username}}</text>
+                    <text style="display:block">{{list.phone1}}</text>
+                    <view class="margin10">{{list.vehicle_license}}</view>
+                </view>
+                <view class="adMaster-rz">
+                    <image style="width:40rpx;height:45rpx;" src="/assets/img/ggzrz.png"></image>
+                    <view class="margin10">已认证</view>
+                </view>
+            </view> 
+        
+    </view>
+    </view>
+    <view class="adFlex padding-side10"> 
+        <view class="throwMs">
+                <view class="adMaster-title">
+                        <icon class="my-icon"></icon>
+                        <text>投屏信息</text> 
+                </view> 
+                <view class="kong" wx:for="{{list.comments}}" wx:key="index">
+                    <text>型号:{{item.screen_number}}{{item.status}}</text>
+                    <text>押金：{{item.deposit}}元</text>
+                    <text bindtap="untying" data-number="{{item.screen_number}}">申请解绑</text>
+                </view>
+                <view class="row flex-center">
+                     <botton bindtap="scan" class="btn-tf">扫码绑定</botton>
+                </view>
+           
+        </view>
+    </view>
+</view>
+    
+

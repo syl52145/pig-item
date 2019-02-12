@@ -1,0 +1,39 @@
+/* pages/alarmInfo/alarmInfo.wxss */
+.driver {
+    position: fixed;
+    top: 14px;
+    right: 5%;
+    width: 90%;
+    height: 84px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: solid 1px rgba(220, 221, 221, 0.8);
+    border-radius: 5px;
+    color: #fff;
+  }
+  .driver .driver-off {
+    width: 16rpx;
+    height: 16rpx;
+    position: absolute;
+    top: 25px;
+    right:20px;
+  }
+  .driver .driver-title {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    width: 80%;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .driver .driver-text{
+    position: absolute;
+    top: 47px;
+    left: 20px;
+    width: 80%;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .btn-color{
+    color:#6d6c6c;
+  }

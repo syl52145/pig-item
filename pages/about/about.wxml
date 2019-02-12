@@ -1,0 +1,11 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+    <view class="news">
+        <view class="title">{{data.title}}</view>
+        <view class="content">{{data.content}}</view>
+        <view class="footer">
+            <text>发布日期：{{data.addtime}}</text>
+            <text>点击次数：{{data.click}}</text>
+        </view>
+    </view>
+</view>

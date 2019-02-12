@@ -1,0 +1,160 @@
+/* pages/adMaster/adMaster.wxss */
+page{
+    background: #f8f8f8;
+}
+.padding-side16{
+    padding:0 16rpx;
+}
+.padding-side10{
+    padding:0 10rpx;
+}
+.adFlex{
+    width: 100%;
+    height:auto;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+
+.user-info-wrap{ 
+    background-image: linear-gradient(to top,
+    #ffaa33 0%,
+    #fbbc30 50%,
+    #fabe2f 57%,
+    #f6ce2c 100%);
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 170rpx;
+}
+
+.my .account-info{
+    box-sizing: border-box;
+    padding: 46rpx 46rpx 0rpx;
+    width: 100%;
+    height: 300rpx;
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+  }
+.my .account-info .account-header{
+    border-bottom: 1px solid #aaaaaa;
+    padding-bottom: 40rpx;
+}
+
+.adMaster-title{
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f8f8f8;
+}
+.my-icon{
+    width:6rpx;
+    height: 31rpx;
+    background: #fbb830;
+    margin-right:10px;
+}
+.adMaster-detail{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom:20px;
+}
+.adMaster-detail .adMaster-info text{
+    margin-right:50rpx;
+}
+.margin10{
+    display: block;
+    margin-top:10rpx;
+}
+.adMaster-detail .adMaster-rz{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.throwMs{
+    width:100%;
+    background: #ffffff; 
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding:46rpx 52rpx 0;
+}
+.throwMs .kong{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px 20px;
+}
+.throwMs .kong text{
+    margin-top:10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color:#999999;
+}
+
+.throwMs .btn-tf{
+    width:320rpx;
+    height: 68rpx;
+    background: #ffaa33;
+    text-align: center;
+    line-height: 68rpx;
+    border-radius: 5px;
+    color:#ffffff;
+    font-size: 16px;
+}
+
+/*有广告内容*/
+.greenColor{
+    color:#37931b;
+}
+
+.info{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px 0px;
+}
+
+.info .adTab{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.info .adTab .ad-title{
+    display: flex;
+    justify-content: space-between;
+}
+.info .adTab .ad-title text:first-child{
+    font-weight: 600;
+}
+.info .adTab .ad-info{
+    
+    margin:10px 0;
+}
+.info .adTab .ad-info text:first-child{
+    display: block;
+}
+.info .adTab .ad-info .greenColor{
+    margin-left:10px;
+    text-decoration: underline;
+}
+
+/*清除图标*/
+.clear-icon{
+    position: absolute;
+    top:1px;
+    left:1px;
+    border:1px solid red;
+    width:20px;
+    height: 20px;
+}

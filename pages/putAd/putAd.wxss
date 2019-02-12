@@ -1,0 +1,161 @@
+/* pages/putAd/putAd.wxss */
+page{
+    background: #fcfcfc;
+}
+.container .adTitle{
+    width:100%;
+    height:80rpx;
+    display: flex;
+    align-items: center;
+    background: #fbb830;
+    padding-left:25px;
+    color:#ffffff;
+    font-size: 16px;
+}
+.container .adTitle .adTitle-icon{
+    width:6rpx;
+    height: 31rpx;
+    background:#ffffff;
+    margin-right:10px;
+    z-index: 100;
+}
+
+.putInfo{
+    height:55px;
+    width:100%;
+    display: flex;
+    padding:0 16px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    
+}
+.bottom-b{
+    border-bottom:1px solid #ddd;
+}
+.putInfo .list-msg{
+    display: flex;
+    align-items: center;
+    
+    flex: 1;
+    margin-left:46rpx;
+}
+.putInfo .list-msg input{
+    align-items: center;
+}
+
+.putImg{
+    width:100%;
+    display: flex;
+    padding-left:16px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    font-size: 14px;
+    flex-direction: column;
+}
+.putImg text{
+    display: block;
+    height:55px;
+    width: 100%;
+    line-height: 55px;
+}
+.putImg text:last-child{
+    display: block;
+}
+.spaceB{
+    justify-content: space-between;
+}
+
+.putInfo01{
+     width:100%;
+    display: flex;
+    padding:0 16px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    font-size: 14px;
+    flex-direction: column;
+}
+
+
+.size12{
+    font-size:12px;
+    color:#ddd;
+    height:30px !important;
+    line-height:30px !important;
+}
+.bgInput{
+    border:1px solid #ddd;
+    width:100%;
+    height:150rpx;
+    padding:5rpx;
+}
+.putInfo01 text{
+    height:30px;
+    line-height:30px;
+}
+
+.put-btn{
+    width:100%;
+background:#feac34;
+font-size:16px;
+    margin-top:20px;
+}
+
+/*下拉栏*/
+.list-msg.spaceB{
+    position:relative;
+}
+.list-msg.spaceB .downBox{
+    position: absolute;
+    top: 26px;
+    left:-10px;
+    width: 100%;
+    height:200px;
+    z-index: 200;
+    background: #ffffff;
+    border: 1rpx solid #ddd;
+    overflow: hidden;
+    animation:mymove .5s linear;
+}
+
+@keyframes mymove
+{
+from {height:0px;}
+to {height:200px;}
+}
+.list-pic{
+    display: flex;
+    flex-wrap: wrap;
+}
+.list-msg.spaceB .downBox .downFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-msg.spaceB .downBox text{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    line-height: 50px;
+    padding-left:10px;
+}
+
+.colorSel{
+    color: #feac34;
+}
+
+.phColor{
+    color: #666 ;
+}
+
+.flexStart{
+    justify-content: flex-start !important;
+}
+
+.list-data{
+    display:flex;
+    align-items:center;
+
+}
+

@@ -1,0 +1,80 @@
+/* pages/coupons/coupons.wxss */
+.coupons.container {
+    background: #f8f8f8;
+    min-height: 100vh;
+  }
+  .coupons.container .merchants-wrap {
+    width: 100%;
+  }
+  .coupons.container .merchants-wrap .merchants-item {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx;
+    height: 200rpx;
+    background: #fff;
+    margin-bottom: 8rpx;
+  }
+  .coupons.container .merchants-wrap .merchants-item .title {
+    color: #000000;
+    font-size: 36rpx;
+    margin-bottom: 30rpx;
+  }
+  .coupons.container .merchants-wrap .merchants-item .describe {
+    font-size: 24rpx;
+    letter-spacing: 0px;
+    color: #898989;
+  }
+  .coupons.container .merchants-wrap .merchants-item .distance {
+    font-size: 28rpx;
+    letter-spacing: 1.7rpx;
+    color: #898989;
+  }
+  .bounced-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .bounced-wrap .bounced {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -270rpx;
+    margin-top: -315rpx;
+    width: 545rpx;
+    height: 630rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+  }
+  .bounced-wrap .bounced .header {
+    margin-bottom: 10rpx;
+    position: relative;
+  }
+  .bounced-wrap .bounced .header image {
+    width: 547rpx;
+    height: 470rpx;
+  }
+  .bounced-wrap .bounced .header .cross-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width:24px;
+    height: 24px;
+  }
+  .bounced-wrap .bounced .footer .btn {
+    width: 328rpx;
+    height: 65rpx;
+    background: #ffaa33;
+    border-radius: 30rpx;
+    font-size: 32rpx;
+    color: #fdfcfc;
+    margin-bottom: 10rpx;
+  }
+  .bounced-wrap .bounced .footer .tip {
+    font-size: 20rpx;
+    letter-spacing: 0.4px;
+    color: #9f9f9f;
+  }
+  

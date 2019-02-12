@@ -1,0 +1,12 @@
+/* pages/service/service.wxss */
+.nav-btn-wrap{
+    flex-wrap:wrap;
+}
+.btn{
+    width: 100rpx;
+    margin: 70rpx;
+    
+}
+.context{
+    font-size: 24rpx;
+}

@@ -1,0 +1,81 @@
+/* pages/historyRecord/historyRecord.wxss */
+.history-record.container {
+    min-height: 100vh;
+    background: #ffffff;
+    
+  }
+  .history-record.container .history-record-wrap {
+    width: 100%;
+    height: 100%;
+  }
+  .history-record.container .history-record-wrap .record-item {
+    font-size: 28rpx;
+    color: #7b7b7b;
+    box-sizing: border-box;
+    width: 100%;
+    /* background-color: #f8f8f8; */
+    border-radius: 10rpx;
+    /* margin-bottom: 10rpx; */
+    /* border-bottom: 1px solid #f8f8f8; */
+    padding: 25rpx 25px 25px 10%;
+    position: relative;
+    /* padding: 14rpx; */
+  }
+  .history-record.container .history-record-wrap .record-item::after{
+    content: "";
+    width:80%;
+    height:1px;
+    position: absolute;
+    bottom:0;
+    background: #f8f8f8;
+  }
+  .history-record.container .history-record-wrap .record-item .header .start-date {
+    font-size: 24rpx;
+    color: #8f8f8f;
+  }
+  .history-record.container .history-record-wrap .record-item .header .status {
+    color: #3da40a;
+  }
+  
+
+  .marker{
+    position: absolute;
+    top:0;
+    left:0;
+    width:10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .marker .marker-line{
+    width:1px;
+    height:40%;
+    background: #ccc;
+  }
+  .marker .marker-circle{
+    width:5px;
+    height:5px;
+    border-radius: 50%;
+    border:1px solid #ccc;
+  }
+
+  /*时间标签*/
+  .data{
+    width:100px;
+    height:25px;
+    background: #feac34;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:15px 0;
+    
+  }
+  .data text{
+    font-size: 14px;
+    color:#fff;
+  }

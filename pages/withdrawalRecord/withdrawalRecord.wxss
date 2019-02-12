@@ -1,0 +1,41 @@
+/* pages/withdrawalRecord/withdrawalRecord.wxss */
+.withdrawal-record.container {
+    min-height: 100vh;
+    background: #f8f8f8;
+    padding: 25rpx;
+  }
+  .withdrawal-record.container .withdrawal-record-wrap {
+    width: 100%;
+    height: 100%;
+  }
+  .withdrawal-record.container .withdrawal-record-wrap .record-item {
+    box-sizing: border-box;
+    width: 702rpx;
+    height: 178rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+    margin-bottom: 10rpx;
+    padding: 20rpx;
+  }
+  .withdrawal-record.container .withdrawal-record-wrap .record-item .header .title {
+    font-size: 36rpx;
+    letter-spacing: 0px;
+    color: #7b7b7b;
+  }
+  .withdrawal-record.container .withdrawal-record-wrap .record-item .header .amount {
+    font-size: 36rpx;
+    letter-spacing: 0px;
+    color: #feac34;
+  }
+  .withdrawal-record.container .withdrawal-record-wrap .record-item .content {
+    font-size: 28rpx;
+    letter-spacing: 0px;
+    color: #8f8f8f;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .withdrawal-record.container .withdrawal-record-wrap .record-item .footer {
+    font-size: 28rpx;
+    letter-spacing: 0px;
+    color: #7b7b7b;
+  }
+  

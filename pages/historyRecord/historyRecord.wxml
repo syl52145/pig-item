@@ -1,0 +1,29 @@
+<!--pages/historyRecord/historyRecord.wxml-->
+<view class="history-record container">
+    <view class="history-record-wrap column">
+      <view class="data">
+        <text>2018-12</text>
+      </view>
+      <view
+        wx:for="{{arr}}"
+        wx:item="item"
+        wx:key="index"
+        wx:index="index"
+        class="record-item column space-between">
+        <view class="marker">
+          <view class="marker-line"></view>
+          <view class="marker-circle"></view>
+          <view class="marker-line"></view>
+        </view>
+        <view class="header row space-between">
+          <text class="start-date">上车时间：{{item.date}}</text>
+          <text class="status">{{statusArr[item.status]}}</text>
+        </view>
+        <view class="content column">
+          <text>上车地点：{{item.start}}</text>
+          <text>目的地：{{item.destination}}</text>
+          <text>出发时间：{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </view>

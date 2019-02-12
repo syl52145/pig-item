@@ -1,0 +1,46 @@
+<!--pages/adMasterApprove/adMasterApprove.wxml-->
+<view class="container driver-approve">
+    <view class="id-card-upload row">
+      <view  wx:for="{{idCardData}}" wx:item="item" wx:index="index" wx:key="index" class="column" style="padding: 10rpx 24rpx 0;" bindtap="showAction" data-wpyshowaction-a="{{index}}">
+        <text class="{{item.err?'err':''}}">{{item.text}}</text>
+        <view style="position: relative;width: 100%;">
+          <image style="width: 320rpx;height:189rpx;" src="{{item.src}}"/>
+          <view class="reUp" catchtap="reUp" data-index="{{index}}" wx:if="{{item.pic}}">重新上传</view>
+        </view>
+        
+      </view>
+    </view>
+   <view class="ad-flex">
+    <view class="tishi">
+        <view class="tishi-left"></view>
+        <text>请正确填写以下信息</text> 
+        <view class="tishi-right"></view>
+    </view>
+    <view class="row flex-center" style="width: 100%;border-bottom: 1px solid #aaaaaa;">
+        <label  class="{{listDetail.company_name?'err':''}}">公司名称</label>
+      <input placeholder="请输入" value="{{params.company_name}}" data-label="公司名称" input-align="right" bindinput="onChange" data-wpyonchange-a="company_name"  bindtap="modifyInfo"/>
+    </view>
+    <view class="row flex-center" style="width: 100%;border-bottom: 1px solid #aaaaaa;">
+        <label class="{{listDetail.company_address?'err':''}}">公司地址</label>
+      <input placeholder="请输入" value="{{params.company_address}}" data-label="公司地址" input-align="right" bindinput="onChange" data-wpyonchange-a="company_address"  bindtap="modifyInfo"/>
+    </view>
+    <view class="row flex-center" style="width: 100%;border-bottom: 1px solid #aaaaaa;">
+        <label class="{{listDetail.range?'err':''}}">运营范围</label>
+      <input placeholder="请输入" value="{{params.range}}" data-label="运营范围" input-align="right" bindinput="onChange" data-wpyonchange-a="range" bindtap="modifyInfo"/>
+    </view>
+    <view class="row flex-center" style="width: 100%;border-bottom: 1px solid #aaaaaa;">
+        <label class="{{listDetail.legal_name?'err':''}}">法人姓名</label>
+      <input placeholder="请输入" value="{{params.legal_name}}" data-label="法人姓名" input-align="right" bindinput="onChange" data-wpyonchange-a="legal_name" bindtap="modifyInfo"/>
+    </view>
+    <view class="row flex-center" style="width: 100%;border-bottom: 1px solid #aaaaaa;">
+        <label  class="{{listDetail.phone?'err':''}}">联系电话</label>
+      <input placeholder="请输入" value="{{params.phone}}" data-label="联系电话" input-align="right" bindinput="onChange" data-wpyonchange-a="phone" bindtap="modifyInfo"/>
+    </view>
+    <view class="row flex-center" style="width: 100%;border-bottom: 1px solid #aaaaaa;">
+        <label class="{{listDetail.email?'err':''}}">邮箱</label>
+      <input placeholder="请输入" value="{{params.email}}" data-label="邮箱" input-align="right" bindinput="onChange" data-wpyonchange-a="email" bindtap="modifyInfo"/>
+    </view>
+    </view>
+    </view>
+
+    <button class="submit-btn" bindtap="adMasterApprove">提交审核</button>

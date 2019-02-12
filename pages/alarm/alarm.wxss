@@ -1,0 +1,53 @@
+/* pages/alarm/alarm.wxss */
+.alarm {
+    min-height: 100vh;
+    background: #f8f8f8;
+  }
+  .alarm .alarm-wrap {
+    margin-top: 30rpx;
+    margin-left: 60rpx;
+  }
+  .alarm .alarm-wrap .alarm-item {
+    box-sizing: border-box;
+    padding: 30rpx 20rpx;
+    margin-bottom: 30rpx;
+    font-size: 26rpx;
+    width: 580rpx;
+    height: 226rpx;
+    background-color: #ffffff;
+    box-shadow: -1.2rpx 1.6rpx 24.6rpx 4.4rpx rgba(85, 85, 85, 0.09);
+    border-radius: 5rpx;
+  }
+  .alarm .alarm-wrap .alarm-item .status-tab-wrap {
+    position: relative;
+    left: -30rpx;
+  }
+  .alarm .alarm-wrap .alarm-item .status-tab-wrap .status-tab {
+    width: 132rpx;
+    height: 49rpx;
+    background-color: #ff624c;
+    border-radius: 5rpx;
+    border-top-right-radius: 25rpx;
+    border-bottom-right-radius: 25rpx;
+  }
+  .alarm .alarm-wrap .alarm-item .status-tab-wrap .status-tab.complete {
+    background-color: #22ac38;
+  }
+  .alarm .alarm-wrap .alarm-item button {
+    width: 132rpx;
+    height: 49rpx;
+    border-radius: 5rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #fff;
+    background-color: #22ac38;
+  }
+
+  .alarm .alarm-wrap .alarm-item button.complete {
+    background-color: #898989;
+  }
+  
+  .alarm-wrap .row.color text{
+    color:#898989;
+    margin:2px 0;
+  }

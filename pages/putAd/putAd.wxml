@@ -1,0 +1,109 @@
+<!--pages/putAd/putAd.wxml-->
+<view class="container">
+    <view class="adTitle">
+        <icon class="adTitle-icon"></icon>
+        <text>投放信息</text> 
+    </view>
+    <view class="putInfo flexStart bottom-b">
+        <text>投放区域：</text>
+        
+            <picker class='list-msg spaceB' style="height:50px;" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                <view class="list-data"  style="height:50px;flex: 1;">
+                        <view class="picker" wx:if="{{list.launch_area}}">
+                        {{multiArray[0][multiIndex[0]]}}省 {{multiArray[1][multiIndex[1]]}}市
+                      </view>
+                      <input type="text" placeholder="请选择广告投放区域" value="{{list.launch_area}}" wx:else  disabled/>
+                      <image style='height:8px;width:15px;position: absolute;right:0px;' src='/assets/img/down.png'></image>
+                </view>   
+                    
+            </picker>
+            
+                
+               
+                
+                <!-- <scroll-view scroll-y="true" class="downBox" wx:if="{{showDown}}">
+                   <view class="downFlex"  style="width: 100%">
+                        <text catchtap="selArea" wx:for="{{area}}" wx:key="index" class="{{areaIndex==index?'colorSel':''}}" data-index="{{index}}">{{item}}</text>
+                        
+                   </view>
+                </scroll-view>               -->
+        
+        
+    </view>
+    <view class="putInfo bottom-b">
+        <text>投放数量：</text>
+        <view class='list-msg spaceB'>
+                <input type="number" bindinput='inputData' data-type="launch_number" placeholder="请输入广告投放数量" />
+        </view>
+    </view>
+    <view class="putInfo">
+            <text>投放时间：</text>
+            <view class='list-msg spaceB'>
+                    <picker
+                        mode="date"
+                        class="alignRight"
+                        value="{{list.start_time}}"
+                        start="2019-01-01"
+                        end="2020-01-01"
+                        data-type="start_time"
+                        bindchange="bindDateChange"
+                    >
+                        <view class="picker phColor" wx:if="{{list.start_time==''}}">请选择日期</view>
+                        <view class="picker" wx:else>{{list.start_time}}</view>
+                    </picker>
+                    <text>至</text>
+                    <picker
+                        mode="date"
+                        class="alignRight"
+                        value="{{list.out_time}}"
+                        start="{{list.start_time?list.start_time:'2019-01-01'}}"
+                        end="2030-01-01"
+                        data-type="out_time"
+                        bindchange="bindDateChange"
+                    >
+                        <view class="picker phColor" wx:if="{{list.out_time==''}}">请选择日期</view>
+                        <view class="picker" wx:else>{{list.out_time}}</view>
+                    </picker>
+            </view>
+    </view>
+    <view class="adTitle">
+        <icon class="adTitle-icon"></icon>
+        <text>广告信息</text>
+    </view>
+    <view class="putInfo bottom-b">
+            <text>广告标题：</text>
+            <view class='list-msg'>
+                    <input type="text" style="width:80%;" bindinput='inputData' data-type="launch_title" placeholder="请输入广告标题" value="{{list.launch_title}}" />
+                    
+            </view>
+    </view>
+    <view class="putImg">
+            <text>投放图片：</text>
+            <view class='list-pic list-msg' >
+                    
+                    <view style="position: relative"  wx:for="{{images}}" wx:key="index" data-index="index">
+                        <image style='height:170rpx;width:155rpx;margin:0 8px 10px 0;' src="{{item}}" bindtap="handleImagePreview"></image>
+                        <image  data-index="{{index}}"  bindtap="removeImage" style='height:40rpx;width:40rpx;position: absolute;top:0px;right: 0px;' src='/assets/img/del.png'></image>
+                    </view>
+                    <view style="position: relative" bindtap='bindShowPic'   wx:if="{{images.length<8}}">
+                        <image style='height:170rpx;width:155rpx;border: 1rpx solid #e3e3e3' src="{{pic.url}}"></image>   
+                    </view>
+                     
+            </view>
+            <text class="size12">(注：如有视频文件请上传至邮箱xiaoruzhu@qq.com)</text>
+        </view>
+
+        <view class="putInfo01">
+                <text>广告内容：</text>
+                <view class='list-msg'>
+                        <textarea bindinput='inputData' data-type="content" class="bgInput" value="{{list.launch_content}}"  placeholder="请输入广告内容" ></textarea>
+                        
+                </view>
+        </view>
+         <button class="put-btn" bindtap="submitForm">提交审核</button>
+
+         
+           
+             
+            
+</view>

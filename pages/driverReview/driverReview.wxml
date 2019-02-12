@@ -1,0 +1,16 @@
+<!--pages/driverReview/driverReview.wxml-->
+<view class="container">
+    <image class="bg" style="width: 100%;height: 100vh;top:-{{navHeihgt}}px;" src="/assets/img/driver/review.png"></image>
+    <view class="loading">
+        <view class="loading-q">
+            <view class="q-cover"></view>
+        </view>
+        <image class="loading-t" src="/assets/img/driver/loading-t.png"></image>
+        <text class="loading-ing">审核中</text>
+    </view>
+    <view class="review">
+        <view class="review-title">提交成功，请等待管理呀审核！</view>
+        <view class="review-detail">预计3个工作日内审核完毕，审核结果会短信通知到您的手机上。</view>
+    </view>
+    
+</view>

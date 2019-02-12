@@ -1,0 +1,93 @@
+<!--pages/my/my.wxml-->
+<view class="my container">
+
+    <view class="user-info-wrap row">
+      <view class="user-info row flex-center">
+          <view class="user-icon" style="overflow:hidden;" wx:if="{{!isLogin}}">
+              <open-data class="user-icon" type="userAvatarUrl"></open-data>
+          </view>
+          
+          <image class="user-icon" src="{{userInfo.img_url}}" wx:else></image>
+          <view class="user-name-wrap column" wx:if="{{isLogin}}">
+            <text>{{userInfo.nickname}}</text>
+            <text>UID:{{userInfo.id}}</text>
+          </view>
+          <view class="user-name-wrap column" wx:else>
+              <button  class="btn-confirm btn-color"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">未登录</button>
+              
+          </view>
+      </view>
+    </view>
+    <view class="account-info column space-between">
+      <view class="account-header row space-between">
+        <view class="account-balance column">
+          <text>账户余额</text>
+          <text class="num" style="height:21px;">{{userInfo.money}}</text>
+        </view>
+        <view class="withdrawal column space-between flex-center">
+          <image bindtap="cashList" style="width: 30rpx;height: 30rpx;" src="/assets/img/my/withdrawal_icon.png"></image>
+          <button bindtap="goCash" class="btn row center flex-center">提现</button>
+        </view>
+      </view>
+      <view class="account-footer row space-between">
+        <view
+          class="btn column flex-center"
+          wx:for="{{buttonData}}"
+          wx:key="index"
+          wx:index="index"
+          wx:item="item"
+          bindtap="goTo" data-url="{{item.url}}"
+          data-index="{{index}}"
+        >
+          <image style=" width: 90rpx; height: 90rpx;" mode="{{mode}}" src="{{item.src}}"></image>
+          <text
+            class="text row center"
+          >{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="approve">
+
+      <view
+        wx:if="{{role==1 || role==0}}"
+        bindtap="review" data-url="{{Authentication==1?'../driverReview/driverReview':'../driverApprove/driverApprove'}}"
+        class="approve-item driver row space-between flex-center">
+        <view class="left row flex-center">
+          <image src="/assets/img/my/driver_icon.png" style="width: 52rpx;height:40rpx;"></image>
+          <text>司机认证</text>
+        </view>
+        <view class="right">
+          <text>{{review[Authentication]}}</text>
+        </view>
+      </view>
+
+      <view
+        wx:if="{{role==2 ||role==0}}"
+        bindtap="review"  data-url="{{Authentication==1?'../driverReview/driverReview':'../adMasterApprove/adMasterApprove'}}"
+        class="approve-item ad-master row space-between flex-center">
+        <view class="left row flex-center">
+          <image src="/assets/img/my/driver_icon.png" style="width: 52rpx;height:40rpx;"></image>
+          <text>广告主</text>
+        </view>
+        <view class="right">
+          <text>{{reviewAd[Authentication]}}</text>
+        </view>
+      </view>
+
+      <view
+        bindtap="review"  data-url="../about/about"
+        class="approve-item ad-master row space-between flex-center">
+        <view class="left row flex-center">
+          <image src="/assets/img/my/about.png" style="width: 52rpx;height:40rpx;"></image>
+          <text>关于我们</text>
+        </view>
+      </view>
+
+    </view>
+
+
+    <image
+      class="online-customer"
+      src="/assets/img/my/online_customer.png"
+      style="width: 193rpx;height: 72rpx;"></image>
+  </view>

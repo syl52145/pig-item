@@ -1,0 +1,15 @@
+<!--pages/alarmInfo/alarmInfo.wxml-->
+<view class="alarm-info container">
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="16" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" show-location="show-location" style="width: 100%; height: 100vh;">
+      <cover-view bindtap="ddd">
+        111
+      </cover-view>
+      <cover-view class="driver"  data-wpygoto-a="{{'alarm'}}" wx:if="{{modalShow}}">
+        <cover-image class="driver-off" bindtap="offModal" style="width: 16px;height: 16px;" src="/assets/img/map/guanbi.png"/>
+        <cover-view class="driver-title">司机姓名：{{diver}}</cover-view>
+        <cover-view class="driver-text">{{car}}</cover-view>
+      </cover-view>
+    </map>
+    <button class="submit-btn btn-color" wx:if="{{aa}}">处理</button>
+    <button class="submit-btn btn-color" wx:else>已处理</button>
+  </view>

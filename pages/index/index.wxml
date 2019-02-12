@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <!--<button open-type="getLocation">11</button>-->
+  <map id="map"
+       longitude="{{longitude}}"
+       latitude="{{latitude}}"
+       scale="{{scale}}"
+       controls="{{controls}}"
+       bindcontroltap="controltap"
+       markers="{{marker}}"
+       bindmarkertap="markertap"
+       style="width: 100%; height: 100vh;">
+    <cover-view
+      bindtap="ddd"
+    >
+      
+    </cover-view>
+    <cover-view
+      class="alarm row flex-center space-around"
+      bindtap="goTo" data-url="../alarm/alarm"
+    >
+      <cover-image class='alarm-icon' src='/assets/img/map/alarm.png'></cover-image>
+      <cover-view class='tip-text'>警报</cover-view>
+    </cover-view>
+  </map>
+</view>
+
+ <!--弹窗-->
+ <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ <view class="modal-dialog" wx:if="{{showModal}}">
+   <view class="modal-title">微信登录</view>
+   <view class="modal-content">
+     小程序登录需要你的授权
+   </view>
+   <view class="modal-footer">
+     <view class="btn-cancel" bindtap="offModal" data-status="cancel">取消</view>
+     <button  class="btn-confirm" style="line-height:86rpx;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">知道了</button>
+   </view>
+ </view>
+ 

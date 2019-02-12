@@ -1,0 +1,25 @@
+<!--pages/alarm/alarm.wxml-->
+<view class="alarm container">
+    <view class="alarm-wrap">
+        <view  wx:for="{{arr}}" wx:item="item" wx:key="index" wx:index="index" class="alarm-item column space-between">
+          <view class="row space-between">
+            <view class="status-tab-wrap">
+              <text class="row center flex-center status-tab {{item.status?'complete':''}}">{{statusArr[item.status]}}</text>
+            </view>
+            <text>{{item.number}}</text>
+          </view>
+          <view class="row color">
+            <text>报警位置：</text>
+            <text>{{item.location}}</text>
+          </view>
+          <view class="row color">
+              <text>司机姓名：</text>
+              <text>{{item.location}}</text>
+            </view>
+          <view class="row color space-between flex-center">
+              <text>{{item.date}}</text>
+            <button class="row center flex-center {{item.status?'complete':''}}">{{buttonStatus[item.status]}}</button>
+          </view>
+        </view>
+    </view>
+  </view>

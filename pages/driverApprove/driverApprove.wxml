@@ -1,0 +1,390 @@
+<!--pages/driverApprove/driverApprove.wxml-->
+<view class="container driver-approve" wx:if="{{status==0}}">
+  <view class="{{!model?' ':'hidden'}}">
+    <view class="id-card-upload row">
+        <view
+          wx:for="{{idCardData}}"
+          wx:item="item"
+          data-index="{{index}}"
+          wx:key="index"
+          class="column"
+          bindtap="showAction"
+          style="padding: 10rpx 24rpx 0;"
+        >
+          <text>{{item.text}}</text>
+          <view style="position: relative;width: 100%;">
+              <image
+                style="width: 320rpx;height:189rpx;"
+                src="{{item.src}}"></image>
+              <view class="reUp" wx:if="{{item.pic}}">重新上传</view>
+          </view>
+          
+        </view>
+    </view>
+    <view class="tishi">
+      <view class="tishi-left"></view>
+      <text>请正确填写个人信息</text> 
+      <view class="tishi-right"></view>
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+      <view class="row01 flex-center">
+        <image src="/assets/img/driver/name_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+        <label>本人姓名</label>
+      </view>
+      
+      <input
+        placeholder="请输入"
+        value="{{params.username}}"
+        data-label="本人姓名"
+        bindinput="onChange"
+        data-type="username"
+      />
+    </view>
+    <view
+      class="row flex-center"
+  style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+    <view class="row01 flex-center">
+      <image src="/assets/img/driver/phone_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+      <label>手机号1</label>
+    </view>
+      <input
+        placeholder="请输入"
+        value="{{params.phone1}}"
+        data-label="手机号1"
+        bindinput="onChange"
+        data-type="phone1"
+      />
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+    <view class="row01 flex-center">
+      <image src="/assets/img/driver/phone_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+      <label>手机号2</label>
+    </view>
+      <input
+        placeholder="请输入"
+        value="{{params.phone2}}"
+        data-label="手机号2"
+        bindinput="onChange" 
+        data-type="phone2"
+      />
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+    <view class="row01 flex-center">
+      <image src="/assets/img/driver/address_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+      <label>现居住地</label>
+    </view>
+      <input
+        placeholder="请输入"
+        value="{{params.live_address}}"
+        data-label="现居住地"
+        bindinput="onChange"
+        data-type="live_address"
+      />
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+    <view class="row01 flex-center">
+      <image src="/assets/img/driver/id_card_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+      <label>身份证号</label>
+    </view>
+      <input
+        placeholder="请输入" 
+        placeholder-class="placeSty"
+        value="{{params.identity_code}}"
+        data-label="身份证号"
+        bindinput="onChange"
+        data-type="identity_code"
+      />
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+    <view class="row01 flex-center">
+      <image src="/assets/img/driver/driver_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+      <label>初次领证日期</label>
+    </view>
+      <!-- <input
+        style="flex:1;"
+        placeholder="请输入"
+        value="{{params.first_time}}"
+        data-label="初次领证日期"
+        bindchange="onChange"
+        data-type="first_time"
+      /> -->
+        <picker
+        mode="date"
+        class="alignRight"
+        value="{{params.first_time}}"
+        start="2000-01-01"
+        end="2020-01-01"
+        bindchange="bindDateChange"
+      >
+        <view class="picker" wx:if="{{params.first_time==''}}">请选择日期</view>
+        <view class="picker" wx:else>{{params.first_time}}</view>
+      </picker>
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+      <label>车牌号</label>
+      <input
+        placeholder="请输入"
+        value="{{params.vehicle_license}}"
+        data-label="车牌号"
+        bindinput="onChange"
+        data-type="vehicle_license"
+      />
+    </view>
+    <view
+      class="row flex-center"
+      style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+    >
+      <label>车型号</label>
+      <input
+        placeholder="请输入"
+        value="{{params.vehicle_code}}"
+        data-label="车型号"
+        bindinput="onChange"
+        data-type="vehicle_code"
+      />
+    </view>
+    <view
+      class="row flex-center"
+      style="border-bottom: 1px solid #aaaaaa;"
+    >
+    <label>车辆颜色</label>
+      <input
+        placeholder="请输入"
+        value="{{params.vehicle_color}}"
+        data-label="车辆颜色"
+        bindinput="onChange"
+        data-type="vehicle_color"
+      />
+    </view>
+  
+    </view>
+    <view
+      class="{{model?'':'hidden'}}"
+      style="position: fixed; width: 100vw;height: 100vh;background: #fff;">
+      <input
+        type="date"
+        min-date="{{ minDate }}"
+        bindchange="onChange('first_time')"
+        bindconfirm="getDate"
+      />
+    </view>
+    </view>
+    <button wx:if="{{status==0}}"
+      class="submit-btn"
+      bindtap="driverApprove" style="color:#fff">提交审核</button>
+
+
+  <!-- 未通过界面 -->
+  <view class="container driver-approve" wx:if="{{status==1}}">
+    <view class="{{!model?' ':'hidden'}}">
+      <view class="id-card-upload row">
+          <view
+            wx:for="{{idCardData}}"
+            wx:item="item"
+            data-index="{{index}}"
+            wx:key="index"
+            class="column"
+            bindtap="showAction"
+            style="padding: 10rpx 24rpx 0;"
+          >
+            <text class="{{item.err?'err':''}}">{{item.text}}</text>
+            <view style="position: relative;width: 100%;">
+                <image
+                  style="width: 320rpx;height:189rpx;"
+                  src="{{item.src}}"></image>
+                <view class="reUp" catchtap="reUp" data-index="{{index}}" wx:if="{{item.pic}}">重新上传</view>
+            </view>
+            
+          </view>
+      </view>
+      <view class="tishi">
+        <view class="tishi-left"></view>
+        <text>请正确填写个人信息</text> 
+        <view class="tishi-right"></view>
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+        <view class="row01 flex-center">
+          <image src="/assets/img/driver/name_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+          <label class="{{listDetail.username?'err':''}}">本人姓名</label>
+        </view>
+        
+        <input
+          placeholder="请输入"
+          value="{{params.username}}"
+          data-label="本人姓名"
+          bindinput="onChange"
+          data-type="username"
+        />
+      </view>
+      <view
+        class="row flex-center"
+    style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+      <view class="row01 flex-center">
+        <image src="/assets/img/driver/phone_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+        <label class="{{listDetail.phone1?'err':''}}">手机号1</label>
+      </view>
+        <input
+          placeholder="请输入"
+          value="{{params.phone1}}"
+          data-label="手机号1"
+          bindinput="onChange"
+          data-type="phone1"
+        />
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+      <view class="row01 flex-center">
+        <image src="/assets/img/driver/phone_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+        <label  class="{{listDetail.phone2?'err':''}}">手机号2</label>
+      </view>
+        <input
+          placeholder="请输入"
+          value="{{params.phone2}}"
+          data-label="手机号2"
+          bindinput="onChange" 
+          data-type="phone2"
+        />
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+      <view class="row01 flex-center">
+        <image src="/assets/img/driver/address_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+        <label class="{{listDetail.live_address?'err':''}}">现居住地</label>
+      </view>
+        <input
+          placeholder="请输入"
+          value="{{params.live_address}}"
+          data-label="现居住地"
+          bindinput="onChange"
+          data-type="live_address"
+        />
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+      <view class="row01 flex-center">
+        <image src="/assets/img/driver/id_card_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+        <label  class="{{listDetail.identity_code?'err':''}}">身份证号</label>
+      </view>
+        <input
+          placeholder="请输入" 
+          placeholder-class="placeSty"
+          value="{{params.identity_code}}"
+          data-label="身份证号"
+          bindinput="onChange"
+          data-type="identity_code"
+        />
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+        
+      >
+      <view class="row01 flex-center">
+        <image src="/assets/img/driver/driver_icon.png" style="width: 70rpx;height: 70rpx;"></image>
+        <label class="{{listDetail.first_time?'err':''}}">初次领证日期</label>
+      </view>
+        <!-- <input
+          style="flex:1;"
+          placeholder="请输入"
+          value="{{params.first_time}}"
+          data-label="初次领证日期"
+          bindchange="onChange"
+          data-type="first_time"
+        /> -->
+          <picker
+            mode="date"
+            class="alignRight"
+            value="{{params.first_time}}"
+            start="2000-01-01"
+            end="2020-01-01"
+            bindchange="bindDateChange"
+          >
+            <view class="picker" wx:if="{{params.first_time==''}}">请选择日期</view>
+            <view class="picker" wx:else>{{params.first_time}}</view>
+          </picker>
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+        <label class="{{listDetail.vehicle_license?'err':''}}">车牌号</label>
+        <input
+          placeholder="请输入"
+          value="{{params.vehicle_license}}"
+          data-label="车牌号"
+          bindinput="onChange"
+          data-type="vehicle_license"
+        />
+      </view>
+      <view
+        class="row flex-center"
+        style="width: {{width}};border-bottom: 1px solid #aaaaaa;"
+      >
+        <label class="{{listDetail.vehicle_code?'err':''}}">车型号</label>
+        <input
+          placeholder="请输入"
+          value="{{params.vehicle_code}}"
+          data-label="车型号"
+          bindinput="onChange"
+          data-type="vehicle_code"
+        />
+      </view>
+      <view
+        class="row flex-center"
+        style="border-bottom: 1px solid #aaaaaa;"
+      >
+      <label class="{{listDetail.vehicle_color?'err':''}}">车辆颜色</label>
+        <input
+          placeholder="请输入"
+          value="{{params.vehicle_color}}"
+          data-label="车辆颜色"
+          bindinput="onChange"
+          data-type="vehicle_color"
+        />
+      </view>
+    
+      </view>
+      <view
+        class="{{model?'':'hidden'}}"
+        style="position: fixed; width: 100vw;height: 100vh;background: #fff;">
+        <input
+          type="date"
+          min-date="{{ minDate }}"
+          bindchange="onChange('first_time')"
+          bindconfirm="getDate"
+        />
+      </view>
+      </view>
+      <button wx:if="{{status==1}}"
+        class="submit-btn"
+        bindtap="driverApprove" style="color:#fff">提交审核</button>
+    

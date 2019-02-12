@@ -1,0 +1,19 @@
+<!--pages/service/service.wxml-->
+<view class="container">
+    <view class="nav-btn-wrap row center">
+      <view
+        class="btn column flex-center"
+        bindtap="goTo"
+        data-index="{{item.url}}"
+        wx:for="{{buttonData}}"
+        wx:key="index"
+        wx:index="index"
+        wx:item="item">
+        <image style=" width: 80rpx; height: 80rpx;" mode="{{mode}}" src="{{item.src}}"></image>
+        <text
+          class="row center context"
+        >{{item.text}}</text>
+      </view>
+    </view>
+
+  </view>

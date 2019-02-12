@@ -1,0 +1,53 @@
+<!--pages/adMaster/adMaster.wxml-->
+<view class="my container">
+    <view class="user-info-wrap"> </view>      
+    <view class="adFlex padding-side16"> 
+        <view class="account-info column space-between">
+            <view class="adMaster-title">
+                <icon class="my-icon"></icon>
+                <text>广告主信息</text> 
+            </view> 
+            <view class="adMaster-detail">
+                <view class="adMaster-info">
+                    <text>{{list.company_name}}</text>
+                    <text>{{list.phone}}</text>
+                    <view class="margin10">{{list.legal_name}}</view>
+                </view>
+                <view class="adMaster-rz" wx:if="{{adMaster}}">
+                    <image style="width:40rpx;height:45rpx;" src="/assets/img/ggzrz.png"></image>
+                    <view class="margin10">已认证</view>
+                </view>
+            </view> 
+        
+    </view>
+    </view>
+    <view class="adFlex padding-side10"> 
+    <view class="throwMs">
+            <view class="adMaster-title">
+                    <icon class="my-icon"></icon>
+                    <text>投放信息</text> 
+            </view> 
+            <view class="kong" wx:if="{{!isPutAd}}">
+                <image style="width:180rpx;height:180rpx;" src="/assets/img/kong1.png"></image>
+                <text>暂无广告投放</text>
+                <botton class="btn-tf"  bindtap="putAd">立即投放</botton>
+            </view>
+            <view class="info" wx:else>
+                <view class="adTab" wx:for="{{list.comments}}" wx:key="index">
+                    <view class="ad-title">
+                        <text>{{item.launch_title}}</text>
+                        <text  class="greenColor">{{item.status==0?'已停止':'投放中'}}</text>
+                    </view>
+                    <view class="ad-info">
+                        <text>投放数量: {{item.launch_number}}台</text>
+                        <text>到期时间：{{filter.dateFormat(item.out_time)}}</text>
+                        <botton bindtap="renew" data-index="{{index}}" class="greenColor">续费</botton>
+                    </view>
+                </view>
+                <botton class="btn-tf" bindtap="putAd">投放广告</botton>
+            </view>
+
+    </view>
+    </view>
+</view>
+    

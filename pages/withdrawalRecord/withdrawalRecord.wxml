@@ -1,0 +1,24 @@
+<!--pages/withdrawalRecord/withdrawalRecord.wxml-->
+<view class="withdrawal-record container">
+    <view class="withdrawal-record-wrap column">
+      <view
+        wx:for="{{arr}}"
+        wx:item="item"
+        wx:key="index"
+        wx:index="index"
+        class="record-item column space-between">
+       <view class="header row space-between">
+          <text class="title">提现</text>
+         <text class="amount">¥{{item.money}}</text>
+       </view>
+        <view class="content row space-between">
+          <text class="date">{{item.time}}</text>
+          <text clsss="status">{{statusArr[item.status]}}</text>
+        </view>
+        <view class="footer">
+         <text>原因：</text>
+          <text>{{item.comments.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>

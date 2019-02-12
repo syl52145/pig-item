@@ -1,0 +1,91 @@
+/* pages/adMasterApprove/adMasterApprove.wxss */
+
+  .hidden {
+    display: none;
+  }
+  .driver-approve {
+    padding-bottom: 100rpx;
+  }
+  .driver-approve .id-card-upload {
+    flex-wrap: wrap;
+    font-size:14px;
+    margin:5px 2%;
+  }
+  .driver-approve .id-card-upload .column{
+      width:50%;
+      box-sizing: border-box;
+  }
+  .driver-approve .id-card-upload .column text{
+      margin:7px 0;
+  }
+
+  .ad-flex{
+      display: flex;
+    flex-wrap: wrap;
+    margin:5px 4%;
+  }
+  /*提示*/
+  .tishi{
+      width: 100%;
+      display: flex;
+      flex-grow:1;
+      justify-content: space-between;
+      align-items: center;
+      margin:10px 4%;
+      color:#aaa;
+      font-size:12px; 
+  }
+  .tishi .tishi-left{
+      height:1px;
+      width:40px;
+      background: #ccc;
+  }
+  .tishi .tishi-right{
+    height:1px;
+    width:40px;
+    background: #ccc;
+}
+
+ .row.flex-center{
+    height:50px;
+    padding:5px 3%;
+    font-size: 14px;
+    justify-content: space-between;
+ }
+ 
+
+ /*输入框*/
+
+ .row.flex-center input{
+  font-size: 14px;
+  text-align: right;
+  width:50%;
+  height:40px;
+}
+
+/*重新上传*/
+.reUp{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  width: 60%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+
+.err::after{
+  content:"*";
+  color:red;
+}
+
+text{
+  font-size: 14px;
+}
